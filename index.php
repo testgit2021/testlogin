@@ -1,5 +1,4 @@
     <?php
-
     include_once 'header.php';
     ?>
     <div class="d-flex align-content-start flex-wrap mt-4 mb-4">

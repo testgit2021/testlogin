@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 function userExists($conn, $email){
     $sql = "SELECT * FROM users;";
     $result = mysqli_query($conn, $sql);
@@ -17,16 +15,17 @@ return $userExists;
 function passwordsMatch($conn, $pwd){
     $sql = "SELECT * FROM users;";
     $result = mysqli_query($conn, $sql);
-    while($row = mysqli_fetch_assoc($result)){
-        $password = $row['pwd'];
-        if(/*password_verify(*/$pwd === $password){
-            $passMatch = true;
-            
-        }else{
-            $passMatch = false;
+    while ($row = mysqli_fetch_assoc($result)){
+            $password = $row['pwd'];
+            if(password_verify($pwd, $password)){
+                $passMatch = true;
+            }else{
+                $passMatch = false;
         }
     }return $passMatch;
 }
+
+
 
 function emptyInput($insert){
     if(empty($insert)){

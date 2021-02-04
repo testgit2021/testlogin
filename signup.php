@@ -3,7 +3,7 @@ include_once 'header.php';?>
 <div class="container rounded w-50 mt-3 mb-5">
     <?php
         if(isset($_GET['empty'])){
-            echo '<p class="text-danger">Please fill in all  * fiels and accept the privacy policy to create account!</p>';
+            echo '<p class="text-danger">Please fill in all  * fields and accept the privacy policy to create account!</p>';
         }
         if(isset($_GET['passdontmatch'])){
             echo "<p class='text-danger'>Your passwords don't match!</p>";
@@ -254,7 +254,7 @@ include_once 'header.php';?>
             <div class="form-check">
                 <?php
             if(isset($_GET['checkbox'])){
-                if($_GET['checkbox'] === "on" && isset($_GET['empty']) || isset($_GET['passdontmatch'])){
+                if($_GET['checkbox'] === "" && isset($_GET['empty']) || isset($_GET['passdontmatch'])){
                     echo '<span class="text-danger">*</span>';
                 }
             }
